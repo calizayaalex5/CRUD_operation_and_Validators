@@ -1,34 +1,82 @@
-### Obtener todos los libros 
-    GET http://localhost:3000/books 
+### =============================================
+### BOOKS
+### =============================================
 
-### Obtener un libro por ID 
-    GET http://localhost:3000/books/REEMPLAZA_ID 
+### Obtener todos los libros
+GET http://localhost:3000/books
 
-### Crear un nuevo libro 
-    POST http://localhost:3000/books 
-    Content-Type: application/json 
+### Obtener un libro por ID
+GET http://localhost:3000/books/
 
-        {   
-            "title": "Clean Code", 
-            "description": "A handbook of agile software craftsmanship", 
-            "author": "Robert C. Martin", 
-            "pages": 464, 
-            "genre": "Programming", 
-            "publishedDate": "2008-08-01" 
-        } 
-        
-### Actualizar un libro 
-    PUT http://localhost:3000/books/REEMPLAZA_ID 
-    Content-Type: application/json 
-    
-    { 
-        "title": "Clean Code Updated", 
-        "description": "Updated version", 
-        "author": "Robert C. Martin", 
-        "pages": 500, 
-        "genre": "Software Engineering", 
-        "publishedDate": "2008-08-01"    
-    } 
-    
-### Eliminar un libro 
-    DELETE http://localhost:3000/books/REEMPLAZA_ID
+### Crear un nuevo libro
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+    "title": "Clean Code",
+    "description": "A handbook of agile software craftsmanship",
+    "author": "Robert C. Martin",
+    "pages": 464,
+    "genre": "Programming",
+    "publishedDate": "2008-08-01",
+    "lenguage": "Inglés"
+}
+
+### Actualizar un libro
+PUT http://localhost:3000/books/
+Content-Type: application/json
+
+{
+    "title": "Clean Code Updated",
+    "description": "Updated version",
+    "author": "Robert C. Martin",
+    "pages": 500,
+    "genre": "Software Engineering",
+    "publishedDate": "2008-08-01",
+    "lenguage": "Inglés"
+}
+
+### Eliminar un libro
+DELETE http://localhost:3000/books/
+
+### =============================================
+### AUTHORS
+### =============================================
+
+### Obtener todos los autores
+GET http://localhost:3000/authors
+
+### Obtener un autor por ID
+GET http://localhost:3000/authors/69beff1b411800232778ff8b
+### Crear un nuevo autor
+POST http://localhost:3000/authors
+Content-Type: application/json
+
+{
+    "firstName": "Robert",
+    "lastName": "Martin",
+    "nationality": "Estadounidense",
+    "birthDate": "1952-12-05",
+    "bio": "Ingeniero de software, autor y conferencista conocido como Uncle Bob.",
+    "genre": "Tecnología",
+    "activeYears": 40,
+    "website": "https://cleancoder.com"
+}
+
+### Actualizar un autor
+PUT http://localhost:3000/authors/69befee8411800232778ff84
+Content-Type: application/json
+
+{
+    "firstName": "Robert",
+    "lastName": "C. Martin",
+    "nationality": "Estadounidense",
+    "birthDate": "1952-12-05",
+    "bio": "Ingeniero de software y autor de Clean Code y The Clean Coder.",
+    "genre": "Tecnología",
+    "activeYears": 45,
+    "website": "https://cleancoder.com"
+}
+
+### Eliminar un autor
+DELETE http://localhost:3000/authors/69befee8411800232778ff84
