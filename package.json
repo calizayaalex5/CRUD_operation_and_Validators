@@ -1,0 +1,33 @@
+{
+  "name": "crud_operation_and_validators",
+  "version": "1.0.0",
+  "description": "CRUD operation ",
+  "keywords": [
+    "CRUD",
+    "API",
+    "REST",
+    "VALIDATOR",
+    "HANDLEERROS"
+  ],
+  "license": "ISC",
+  "author": "Alex Calizaya",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.3.1",
+    "node": "^25.8.1",
+    "nodemon": "^3.1.14",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
