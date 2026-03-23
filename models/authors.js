@@ -44,7 +44,7 @@ const authorSchema = new mongoose.Schema(
         }
     },
     {
-        timestamps: true  // agrega createdAt y updatedAt automáticamente
+        timestamps: true  
     }
 )
 
