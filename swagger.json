@@ -8,10 +8,10 @@
       "name": "Alex Calizaya"
     }
   },
-  "host": "localhost:3000",
+  "host": "https://crud-operation-and-validators.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "securityDefinitions": {
     "oauth2": {
