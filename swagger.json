@@ -8,7 +8,7 @@
       "name": "Alex Calizaya"
     }
   },
-  "host": "https://crud-operation-and-validators.onrender.com",
+  "host": "crud-operation-and-validators.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -670,12 +670,5 @@
         }
       }
     }
-  },
-  "security": [
-    {
-      "oauth2": [
-        "user"
-      ]
-    }
-  ]
+  }
 }

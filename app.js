@@ -31,7 +31,7 @@ app.use(passport.session())
 passport.use(new GitHubStrategy({
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: process.env.CALLBACK_URL
+        callbackURL: process.env.CALLBACK_URL || "https://crud-activity.onrender.com/github/callback"
     },
     function(accessToken, refreshToken, profile, done) {
         return done(null, profile)
@@ -53,6 +53,23 @@ app.get('/github/callback', passport.authenticate('github', { failureRedirect: '
         req.session.user = req.user;
         res.redirect('/')
     });
+
+//rutas de autenticacion
+app.get("/login", passport.authenticate('github', { scope: ['user:email'] }));
+
+app.get("/logout", function (req, res, next) {
+    req.logOut(function (err) {
+        if (err) { return next(err); }
+        res.redirect("/");
+    });
+});
+
+app.get("/github/callback",
+    passport.authenticate("github", { failureRedirect: '/api-docs' }),
+    function (req, res) {
+        res.redirect("/api-docs");
+    }
+)
 
 app.use('/', require('./routes'))
 

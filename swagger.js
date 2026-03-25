@@ -9,7 +9,7 @@ const doc = {
             name: "Alex Calizaya"
         }
     },
-    host: "https://crud-operation-and-validators.onrender.com",
+    host: "crud-operation-and-validators.onrender.com",
     schemes: ["https"],
 
     securityDefinitions: {
@@ -23,12 +23,6 @@ const doc = {
             }
         }
     },
-
-    security: [
-        {
-            oauth2: ['user']
-        }
-    ],
     
     definitions: {
         Book: {
