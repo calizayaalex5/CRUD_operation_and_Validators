@@ -9,8 +9,8 @@ const doc = {
             name: "Alex Calizaya"
         }
     },
-    host: "localhost:3000",
-    schemes: ["http"],
+    host: "https://crud-operation-and-validators.onrender.com",
+    schemes: ["https"],
 
     securityDefinitions: {
         oauth2: {
