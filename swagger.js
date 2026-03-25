@@ -11,6 +11,25 @@ const doc = {
     },
     host: "localhost:3000",
     schemes: ["http"],
+
+    securityDefinitions: {
+        oauth2: {
+            type: "oauth2",
+            authorizationUrl: "https://github.com/login/oauth/authorize",
+            flow: "implicit",
+            scopes: {
+                read: "read",
+                write: "write"
+            }
+        }
+    },
+
+    security: [
+        {
+            oauth2: ['user']
+        }
+    ],
+    
     definitions: {
         Book: {
             type: "object",

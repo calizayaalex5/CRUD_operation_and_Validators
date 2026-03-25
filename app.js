@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv')
 dotenv.config();
+const connectDB = require('./connection/connectDB') 
 const passport = require('passport')
 const session = require('express-session')
 const GitHubStrategy = require('passport-github2').Strategy
@@ -13,7 +14,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors ({ 
-    origin: '*',
+    origin: 'http://localhost:3000',
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Z-Key']
 }))
@@ -42,7 +43,9 @@ passport.deserializeUser((user, done) => {done (null, user)})
 
 // Rutas
 app.get('/', (req, res) => {
-    res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out")
+    res.send(req.session?.user 
+        ? `Logged in as ${req.session.user.displayName || req.session.user.username}` 
+        : 'Logged Out')
 })
 
 app.get('/github/callback', passport.authenticate('github', { failureRedirect: '/api-docs' }),
@@ -66,7 +69,7 @@ app.use((err, req, res, next) => {
 
 
 // Conexión y arranque
-const connectDB = require('./connection/connectDB') 
+
 const startServer = async () => {
     try {
         await connectDB() 
